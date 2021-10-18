@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Catálogo de Filmes</title>
+</head>
+
+<body>
+    <nav>
+        <img src="/img/logo-blue.gif" class="img-fluid gif" alt="Animação Logo Blue">
+        <ul>
+            <li>
+                <a href="/criar">Cadastrar novo filme</a>
+                <a href="#">Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <% if(message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
+
+    <header>
+        <article>
+            <h1>Bem-vindo(a)!</h1>
+        </article>
+    </header>
+
+    <section id="cursos">
+        <h3>Lista de filmes:</h3>
+        <% filmes.forEach(item => { %>
+            <section class="card">
+                <article id="content">
+                    <ul>
+                        <li>Nome: <%= item.nome %></li>
+                        <li>Descrição: <%= item.descricao %></li>
+                        <a href="/detalhes/<%= item.id %>">
+                            <img src="<%= item.imagem %>" width=200>
+                        </a>
+                    </ul>
+                        <a href = "/editar/<%= item.id %>">Editar</a>
+                </article>
+            </section>
+        <% }) %> 
+    </section>
+
+    <section id="inscrever">
+        <h2>Inscreva-se!</h2>
+
+        <form action="/subscription" method="POST">
+            <div>
+                <label for="nome">Digite seu nome: </label>
+                <input type="text" name="usuario" id="nome" placeholder="Digite seu nome" required>
+            </div>
+        
+            <div>
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+            </div>
+        
+            <button type="submit">Inscrever-se</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>
+            < The future is blue /> <a href="https://blueedtech.com.br/" target="_blank"> BlueEdtech</a>
+        </p>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "landing-page-node",
+  "version": "1.0.0",
+  "description": "Minha primeira landgin Page usando Node e Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpereira-blueedtech/landing-page-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gpereira-blueedtech/landing-page-node/issues"
+  },
+  "homepage": "https://github.com/gpereira-blueedtech/landing-page-node#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.7.0"
+  }
+}

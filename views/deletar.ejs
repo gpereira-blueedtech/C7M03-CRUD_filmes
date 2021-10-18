@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Deletar um filme</title>
+</head>
+
+<body>
+    <nav>
+        <img src="/img/logo-blue.gif" class="img-fluid gif" alt="Animação Logo Blue">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <% if(message != "") {  %>
+        <section id="message">
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %>
+    
+    <% if(filme != null) {  %>
+    <section id="inscrever">
+
+        <form action="/deletar/<%= filme.id %>" method="POST">
+            <div>
+                <label for="nome">Digite o nome do filme: </label>
+                <input type="text" name="nome" id="nome" placeholder="Nome do filme" value="<%= filme.nome %>">
+            </div>
+        
+            <div>
+                <label for="descricao">Digite a descrição do filme: </label>
+                <input type="text" name="descricao" id="descricao" placeholder="Descrição" value="<%= filme.descricao %>">
+            </div>
+
+            <div>
+                <label for="imagem">Coloque o link para a imagem do filme: </label>
+                <input type="text" name="imagem" id="imagem" placeholder="Link da imagem" value="<%= filme.imagem %>">
+            </div>
+        
+            <button type="submit">DELETAR!</button>
+        </form>
+    </section>
+    <% }  %>
+
+    <footer>
+        <p>
+            < The future is blue /> <a href="https://blueedtech.com.br/" target="_blank"> BlueEdtech</a>
+        </p>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
